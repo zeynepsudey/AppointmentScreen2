@@ -9,8 +9,8 @@ interface Props {
 }
 
 const TeacherLogin: React.FC<Props> = ({ navigation }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
   const handleLogin = () => {
     if (!email || !password) {
@@ -40,20 +40,25 @@ const TeacherLogin: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TextInput
-        style={styles.input}
+        style={styles.input} 
         placeholder="Email"
+        placeholderTextColor="white"
         value={email}
         onChangeText={setEmail}
+        color="white"
       />
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="Şifre"
+        placeholderTextColor="white"
         secureTextEntry={true}
         value={password}
         onChangeText={setPassword}
+        color="white"
       />
-      <Button title="Login" onPress={handleLogin} />
-    </View>
+      <View style={styles.button}>
+      <Button title="Giriş Yap" onPress={handleLogin} color="white" /> 
+    </View></View>
   );
 };
 
@@ -62,6 +67,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#130632'
   },
   input: {
     width: '80%',
@@ -71,6 +77,15 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 5,
   },
+  button: {
+    marginBottom: 20,
+    justifyContent: 'flex-end',
+    alignSelf: 'center',
+    backgroundColor: '#A391F5',
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 5,
+  }
 });
 
 export default TeacherLogin;

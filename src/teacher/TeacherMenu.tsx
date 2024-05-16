@@ -1,24 +1,24 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-interface HomeProps {
+interface TeacherMenuProps {
   navigation: any;
 }
 
-const Home: React.FC<HomeProps> = ({ navigation }) => {
+const TeacherMenu: React.FC<TeacherMenuProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.button}>
         <Button
-          title="Öğretmen"
-          onPress={() => navigation.navigate('TeacherMenu')} color="white"
+          title="Randevu Belirle"
+          onPress={() => navigation.navigate('TBooking')} color="white"
         />
       </View>
 
       <View style={styles.button}>
       <Button
-  title="Öğrenci"
-  onPress={() => navigation.navigate('StudentLogin')} color="white"
+  title="Randevularım"
+  onPress={() => navigation.navigate('TeacherList')} color="white"
 />
 
       </View>
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default TeacherMenu;
